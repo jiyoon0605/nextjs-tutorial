@@ -7,6 +7,9 @@ import ItemList from "../src/component/ItemList";
 export default function Home() {
   const [list, setList] = useState([]);
   const [isLoading, setLoading] = useState(true);
+
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
   function getData() {
     axios.get(API_URL).then((res) => {
       setList(res.data);
@@ -43,5 +46,3 @@ export default function Home() {
     </div>
   );
 }
-const API_URL =
-  "http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline";
